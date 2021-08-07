@@ -1,0 +1,31 @@
+<div class="container-fluid bg-dark" style="height:100vh">
+    <div class="d-grid  gap-2">
+ <a href="/admin/adminProductos/Create"> Agregar Productos </a>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">id</th>
+      <th scope="col">productos</th>
+      <th scope="col">categoría</th>
+    </tr>
+  </thead>
+
+  {{#each productos}}
+  <tbody>
+    <tr>
+      <th scope="row"></th>
+      <td>{{id}}</td>
+      <td>{{productos}}</td>
+      <td>{{categoría}}</td>
+  
+      <td> <a href="/admin/adminProuctos/update{{id}}"></a><i class="far fa-edit"></i></td>
+      <td> <a href="/admin/adminProuctos/delete{{id}}"></a><i class="fas fa-trash-alt"></i></td>
+      
+  </tr>
+  </tbody>
+  {{/each}}
+</table>
+    </div>
+</div>

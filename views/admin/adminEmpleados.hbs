@@ -1,0 +1,36 @@
+<div class="container-fluid bg-dark" style="height:100vh">
+<div class="d-grid  gap-2"></div>
+<button class="btn btn-info">Agregar Usuario</button>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">id</th>
+      <th scope="col">nombre</th>
+      <th scope="col">Apllido</th>
+      <th scope="col">telefono</th>
+      <th scope="col">direccion</th>
+    </tr>
+  </thead>
+
+  {{#each empleados}}
+  <tbody>
+    <tr>
+      <th scope="row"></th>
+      <td>{{id}}</td>
+      <td>{{nombre}}</td>
+      <td>{{apellido}}</td>
+      <td>{{telefono}}</td>
+      <td>{{direccion}}
+      <td> <img src="/images/{{id}}" alt=""> </td>
+   
+      <td> <a href="/admin/adminEmpleados/delete{{id}}" style="50px"></a><i class="fas fa-trash-alt"></i></td>
+      <td> <a href="/admin/adminEmpleados/update{{id}}"></a><i class="far fa-edit"></i></td>
+      
+  </tr>
+  </tbody>
+  {{/each}}
+</table>
+
+</div>

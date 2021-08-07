@@ -1,0 +1,33 @@
+<div class="container-fluid bg-dark-gray m-o" style="height:100vh"></div>
+
+        <div class="row justify-content-center align-items-center"></div>
+                <div class="col-8"></div>
+                    <form method="post" action="/admin/adminEmpleados/Upate{{empleados.id}}" enctype="multipart.form-data">
+
+                    <div class="mb-3">
+                            <label for="nombre" class="form-label"> nombre:</label>
+                            <input type="text" class="form-control" name="nombre" value="{{empleados.Nombre}}" >
+                    </div>
+
+                        <div class="mb-3">
+                        <label for="apellido" class="form-label">apellidos:</label>
+                        <input type="text" class="form-control" name="pass" value="{{empleados.Apellidos}}">
+                        </div>
+
+                            <div class="mb-3">
+                        <label for="telefono" class="form-label">telefono:</label>
+                        <input type="number" class="form-control" name="telefono" value="{{empleados.telefono}}">
+                            </div>
+                                    <div class="mb-3">
+                        <label for="direccion" class="form-label">direccion:</label>
+                        <input type="text" class="form-control" name="pass" value="{{empleados.direccion}}">
+                                    </div>
+                                        <div class="mb-3">
+                        <label for="imagen" class="form-label">modificar imagen</label>:</label>
+                        <input type="file" class="form-control" name="imagen">
+                                        </div>
+        <div class="d-grid  gap-2">
+                <button type="submit" class="btn btn-primary btn-block">ingresar</button>
+        </div>
+</form>
+
