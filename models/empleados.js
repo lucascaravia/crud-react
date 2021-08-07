@@ -6,10 +6,10 @@ const getTodos = () => {
         return  pool.query(query, params);
 };
 const create = (obj) => 
-pool.query("INSERT INTO ?? SETT ?",[process.env.T_EMPLEADOS,obj]).then(response => response).catch(err => console.error(err));
+pool.query("INSERT INTO ?? SET?",[process.env.T_EMPLEADOS,obj]).then(response => response).catch(err => console.error(err));
 
 const createImg  = (obj) => 
-pool.query("INSERT INTO ?? SETT ?",[process.env.T_EMPLEADOSIMG,obj]).then(response => response)
+pool.query("INSERT INTO ?? SET ?",[process.env.T_EMPLEADOSIMG,obj]).then(response => response)
 .catch(err => console.error(err));
 
 const getsingle = (id)=>{
@@ -21,7 +21,7 @@ const getsingle = (id)=>{
 };
 const deleteEmp = async(id)=>{   
      try {
-    pool.query("UPDATE ?? SETT eliminado = 1 WHERE id = ?",[process.env.T_EMPLEADOS,id]).then(response => response);
+    pool.query("UPDATE ?? SET eliminado = 1 WHERE id = ?",[process.env.T_EMPLEADOS,id]).then(response => response);
   
    }catch(error){
        console.error(error);

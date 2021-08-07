@@ -5,8 +5,6 @@ const verifyUser = (req, res, next) => {
     }else{
         res.render('login',{message: 'nesecitas logearte para acceder'});
         }
-
-
 } 
 const verifyAdmin = (req, res, next) => {
     if (req.session.admin == 1){

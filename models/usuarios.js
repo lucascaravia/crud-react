@@ -26,11 +26,11 @@ const login = async (username, pass) => {
     const params = [process.env.T_USUARIOS,username,pass];
     return await pool.query(query, params);
 };
-const auth = async (username, pass) => {
-    const query = 'SELECT * FROM ?? WHERE username = ? AND pass = ? AND admin = 1'
-    const params = [process.env.T_USUARIOS,username,pass];
+const auth = async(username, pass) => {
+    const query = "SELECT id, admin FROM ?? WHERE username = ? AND pass = ? AND admin = 1 AND eliminados = 0";
+    const params = [process.env.T_USUARIOS, username, pass];
     return await pool.query(query, params);
-};
+}
 const update = async (obj,id) => {
     const query = 'UPDATE ?? SET = ? WHERE id = ?';
     const params = [process.env.T_USUARIOS,obj,id]
