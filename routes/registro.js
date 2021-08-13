@@ -25,11 +25,11 @@ const create = async (req, res) => {
     }
     
     const usuariosExistentes = await model.getAll();
-    usuariosExistentes.forEach(usuario => {
-        if (usuarios.username == usuarioFinal.username || usuario.mail == usuarioFinal.mail) duplicado = true;
+    usuariosExistentes.forEach(usuarios => {
+        if (usuarios.username == usuarioFinal.username || usuarios.mail == usuarioFinal.mail) duplicado = true;
     })
     if (!duplicado) {
-        const agregado = await model.create(usuarioFinal);
+        const agregado = await model.crear(usuarioFinal);
         console.log(agregado);
         send({
             mail : usuarioFinal.mail, 

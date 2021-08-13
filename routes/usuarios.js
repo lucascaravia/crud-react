@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const {getAll,getSingle, crear, edit} = require('./../models/usuarios')
+const {getAll,getSingle, crear, update} = require('./../models/usuarios')
 
 const getTodos = async (req, res ) =>{
     const usuarios = await getAll();
@@ -26,9 +26,11 @@ const showregistro =(req, res) => {
     res.render('createUsuario');
 }
 
-const updateUsuario =(req, res) => {
+const updateUsuario =async (req, res) => {
+    const updateUsers = await  update(updateUsers)
     res.end();
 }
+
 router.get('/', getTodos);
 router.get('/single/:id', single);
 router.get('/regitro', showregistro);

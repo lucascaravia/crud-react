@@ -10,7 +10,7 @@ res.render('productos',{productos});
 
 const single = async (req, res)=>{
     const {id}= req.params.id;
-    const [productos] = await getSingle(id);
+    const [productos] = await Singleget(id);
 console.log(productos,id)
     res.render( 'producto', {productos})
 }
