@@ -10,13 +10,15 @@ const {verifyUser, verifyAdmin} = require('./middlewares/auth');
 dotenv.config();
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
+
 const registro = require('./routes/registro');
 const productos = require('./routes/productos');
 const usuarios = require('./routes/usuarios');
 const login = require('./routes/login');
-const iindex = require('./routes/admin/iindex');
+
+const adminIndex = require('./routes/admin/adminIndex');
 const adminUsuarios = require('./routes/admin/adminUsuarios')
-const adminProductos = require('./routes/admin/AdminProductos')
+const adminProductos = require('./routes/admin/adminProductos')
 const adminEmpleados = require('./routes/admin/adminEmpleados')
 
 const app = express();
@@ -41,9 +43,9 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/registro', registro);
 app.use('/productos', productos);
-app.use('/usuarios', usuarios)
+app.use('/usuarios',verifyUser, usuarios)
 app.use('/login', login)
-app.use ('/admin/iindex', verifyAdmin, iindex)
+app.use ('/admin/adminIndex', verifyAdmin,adminIndex )
 app.use('/admin/adminProductos' ,adminProductos)
 app.use('/admin/adminUsuarios',adminUsuarios)
 app.use('/admin/adminEmpleados',adminEmpleados)
@@ -51,7 +53,7 @@ app.use('/admin/adminEmpleados',adminEmpleados)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
-  next();
+  next( CreateError(404));
 });
 
 // error handler
