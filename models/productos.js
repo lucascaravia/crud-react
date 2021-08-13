@@ -22,5 +22,10 @@ const pool = require("./../utils/bd")
         const params = [process.env.T_PRODUCTOS]
         return await pool.query(query, params);
     }
+    const del = async(id) => {
+        const query = "UPDATE ?? SET eliminados = 1 WHERE id = ?";
+        const params = [process.env.T_PRODUCTOS, id];
+        return await pool.query(query, params);
+    }
 
-    module.exports = {getAll, Singleget,crearProducto,categoria}
+    module.exports = {getAll, Singleget,crearProducto,categoria, del}
